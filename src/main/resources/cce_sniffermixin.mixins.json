@@ -1,0 +1,8 @@
+{
+    "required": true,
+    "package": "io.github.zekerzhayard.cce_sniffermixin.mixin",
+    "client": [
+        "MixinSnifferEntity"
+    ],
+    "plugin": "io.github.zekerzhayard.cce_sniffermixin.MixinConfigPlugin"
+}

@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 1,
+    "id": "cce_sniffermixin",
+    "version": "${version}",
+    "name": "CCE_SnifferMixin",
+    "description": "",
+    "authors": [],
+    "contact": {},
+    "license": "All-Rights-Reserved",
+    "icon": "assets/cce_sniffermixin/icon.png",
+    "environment": "*",
+    "mixins": [
+        "cce_sniffermixin.mixins.json"
+    ]
+}
