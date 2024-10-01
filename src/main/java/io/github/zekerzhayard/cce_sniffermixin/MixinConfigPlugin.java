@@ -70,10 +70,11 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
                 if (ln != null) {
                     LabelNode ln0 = new LabelNode();
+                    String classRegistryEntryList = mr.mapClassName("intermediary", "net.minecraft.class_6885").replace('.', '/');
                     for (AbstractInsnNode ain : ains) {
-                        if (ain.getOpcode() == Opcodes.CHECKCAST && ((TypeInsnNode) ain).desc.equals("net/minecraft/registry/entry/RegistryEntryList")) {
+                        if (ain.getOpcode() == Opcodes.CHECKCAST && ((TypeInsnNode) ain).desc.equals(classRegistryEntryList)) {
                             mn.instructions.insertBefore(ain, new InsnNode(Opcodes.DUP));
-                            mn.instructions.insertBefore(ain, new TypeInsnNode(Opcodes.INSTANCEOF, "net/minecraft/registry/entry/RegistryEntryList"));
+                            mn.instructions.insertBefore(ain, new TypeInsnNode(Opcodes.INSTANCEOF, classRegistryEntryList));
                             mn.instructions.insertBefore(ain, new JumpInsnNode(Opcodes.IFEQ, ln0));
                         } else if (ain.equals(ln)) {
                             LabelNode ln1 = new LabelNode();
